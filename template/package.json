@@ -1,0 +1,52 @@
+{
+  "name": "ssrdemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node server",
+    "start": "cross-env NODE_ENV=production nodemon server",
+    "build": "rimraf dist && npm run build:client && npm run build:server",
+    "build:client": "cross-env NODE_ENV=production webpack  --mode=production --config build/webpack.client.config.js --progress --hide-modules`",
+    "build:server": "cross-env NODE_ENV=production webpack  --mode=production --config build/webpack.server.config.js --progress --hide-modules",
+    "postinstall": "npm run build"
+  },
+  "script": {
+    "dev": "node server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "lru-cache": "^4.1.5",
+    "route-cache": "^0.4.4",
+    "serve-favicon": "^2.5.0",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.6",
+    "vue-server-renderer": "^2.6.10",
+    "vuex": "^3.1.1",
+    "vuex-router-sync": "^5.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "cross-env": "^5.2.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "nodemon": "^1.19.1",
+    "rimraf": "^2.6.3",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-middleware": "^3.7.0",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-merge": "^4.2.1",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
